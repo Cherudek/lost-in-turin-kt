@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/favourites_constraint_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+    tools:context=".ui.FavouritesFragment">
+
+  <com.airbnb.lottie.LottieAnimationView
+    android:visibility="visible"
+    android:id="@+id/lottie_loading"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginBottom="100dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:lottie_autoPlay="true"
+    app:lottie_fileName="loading.json"
+    app:lottie_loop="true"/>
+
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/empty_favourites"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      app:lottie_autoPlay="true"
+      app:lottie_fileName="empty_status.json"
+      app:lottie_loop="true"/>
+
+    <TextView
+      android:id="@+id/add_some_favourites"
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+
+      android:layout_marginTop="@dimen/margin_2x"
+      android:fontFamily="@font/quicksand_medium"
+      android:gravity="center"
+      android:text="@string/add_some_favourites"
+      android:textAlignment="center"
+      android:textAllCaps="false"
+      android:textColor="@color/white"
+      android:textSize="24sp"
+      android:visibility="gone"
+      />
+
+  </LinearLayout>
+
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/favourites_rv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

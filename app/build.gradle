@@ -20,6 +20,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = kotlin_version
+        targetCompatibility = kotlin_version
+    }
+    buildToolsVersion = '28.0.3'
 }
 
 ext {
@@ -101,6 +106,7 @@ dependencies {
     // Support library support (optional)
     kapt "com.google.dagger:dagger-android-support:$dagger2_version"
 
+    provided 'javax.annotation:jsr250-api:1.0'
 
 }
 
